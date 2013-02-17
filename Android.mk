@@ -11,7 +11,7 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_MODULE:= libcurl
 LOCAL_MODULE_TAGS := optional
-LOCAL_STATIC_LIBRARIES := libcrypto_static
+LOCAL_WHOLE_STATIC_LIBRARIES := libcrypto_static
 LOCAL_CFLAGS += -DHAVE_CONFIG_H
 include $(BUILD_STATIC_LIBRARY)
 
@@ -23,7 +23,7 @@ LOCAL_SRC_FILES := $(addprefix src/,$(CURL_CFILES))
 LOCAL_MODULE := curl
 LOCAL_MODULE_TAGS := optional
 LOCAL_STATIC_LIBRARIES := libcurl
-LOCAL_SHARED_LIBRARIES := libssl
+LOCAL_SHARED_LIBRARIES := libssl libz
 
 LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH)/include \
